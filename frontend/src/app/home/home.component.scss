@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(147,206,222,1);
+    background: filter-gradient(#93cede, #49a5bf, vertical);
+    background-image: linear-gradient(to bottom, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    position: relative;
+}
+

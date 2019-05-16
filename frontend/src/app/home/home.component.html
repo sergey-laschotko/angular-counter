@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="counter-display">
+    <div [ngClass]="{ 'popup': true, 'show-popup': showPopup }">
+      <div class="popup-counter">
+        <div class="popup-counter__title">Current</div>
+        <div class="popup-counter__value">{{incomingCurrent}}</div>
+      </div>
+      <div class="popup-counter">
+        <div class="popup-counter__title">Next</div>
+        <div class="popup-counter__value">{{incomingNext}}</div>
+      </div>
+      <div class="popup-actions">
+        <button class="cancel-button" (click)="cancel()">Cancel</button>
+        <button class="confirm-button" (click)="confirm()">Confirm</button>
+      </div>
+    </div>
+    <div class="counter-display__title">Counter</div>
+    <div class="counter-display__counter">
+      <div class="counter">{{counter}}</div>
+    </div>
+  </div>
+</div>

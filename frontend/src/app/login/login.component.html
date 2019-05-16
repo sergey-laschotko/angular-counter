@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="login-form">
+    <div class="login-input">
+      <input type="text" placeholder="Login" [(ngModel)]="login" />
+    </div>
+    <div class="password-input">
+      <input type="password" placeholder="Password" [(ngModel)]="password" />
+    </div>
+    <div class="action-button">
+      <button class="submit-button" (click)="authorize()">Log In</button>
+    </div>
+  </div>
+  <div [ngClass]="{ 'notification': true, 'showAlert': wrongCredentials }">
+    <p>Provided login or password is wrong</p>
+  </div>
+</div>
