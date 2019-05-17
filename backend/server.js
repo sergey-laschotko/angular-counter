@@ -26,7 +26,7 @@ const checkAuth = (req, res, next) => {
             if (payload) {
                 next();
             } else {
-                next();
+                res.status(401).json({ error: "Not Authorized" });
             }
         });
     } else {
@@ -39,7 +39,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    console.log(req.body);
     const login = req.body.login;
     const password = req.body.password;
     if (login !== theOnlyUser.login || password !== theOnlyUser.password) {
@@ -62,6 +61,16 @@ app.get('/get-counter', checkAuth, (req, res) => {
     const nextCounter = counter * 2;
 
     res.json({ counter, nextCounter });
+});
+
+app.post('/cancel-counter', checkAuth, (req, res) => {
+    counter = req.body.counter;
+    res.json({ counter });
+});
+
+app.post('/confirm-counter', checkAuth, (req, res) => {
+    counter = req.body.counter; 
+    res.json({ counter });
 });
 
 app.listen(port, () => {

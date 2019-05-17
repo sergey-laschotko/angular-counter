@@ -19,4 +19,12 @@ export class CounterService {
   getCurrentCounter(): Observable<any> {
     return this.http.get(`${this.serverUrl}/current-counter`);
   }
+
+  cancelCounter(counter: number): Observable<any> {
+    return this.http.post(`${this.serverUrl}/cancel-counter`, { counter });
+  }
+
+  confirmCounter(counter: number): Observable<any> {
+    return this.http.post(`${this.serverUrl}/confirm-counter`, { counter });
+  }
 }
